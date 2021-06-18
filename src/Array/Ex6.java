@@ -1,0 +1,72 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Array;
+
+import java.util.Scanner;
+
+/* Viết chương trình nhập vào mảng một chiều số nguyên n phần tử (n > 0). Liệt kê các phần tử là số chính phương
+ *
+ * @author Ame
+ */
+public class Ex6 {
+    static int inputInt() {
+        int n = 0;
+        Scanner sc = new Scanner(System.in);
+
+        while (n <= 0) {
+            System.out.println("Input n: ");
+            String str = sc.nextLine();
+            try {
+
+                n = Integer.parseInt(str);
+                break;
+
+            } catch (Exception e) {
+                System.out.println("ERROR: " + e);
+            }
+        }
+
+        return n;
+    }
+
+    static void inputArr() {
+
+        Scanner sc = new Scanner(System.in);
+        int n = inputInt();
+
+        int[] array = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Num " + i + ": ");
+            array[i] = sc.nextInt();
+        }
+        
+        for (int i = 0; i < array.length; i++) {
+            if(isSquareNum(array[i])){
+                System.out.println(array[i]);
+            }
+        }
+
+    }
+
+    static boolean isSquareNum(int n) {
+
+        float num = (float) Math.sqrt(n);
+
+        if (num != (int) num) {
+            return false;
+        }
+        return true;
+    }
+    
+    static void output() {
+        inputArr();
+    }
+
+    public static void main(String[] args) {
+        output();
+    }
+}

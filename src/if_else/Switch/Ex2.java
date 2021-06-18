@@ -1,0 +1,44 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package if_else.Switch;
+
+import java.util.Scanner;
+
+/* Viết chương trình nhập vào số nguyên 4 (1 → 4) và in ra mùa tương ứng
+	Ví dụ:
+		n = 1 → XUAN
+		n = 2 → HA
+		n = 3 → THU
+		n = 4 → DONG
+		n = 5 → UNKNOWN
+ *
+ * @author Ame
+ */
+    public class Ex2 {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Nhap so nguyen tu 1 -> 4: ");
+
+            int n = sc.nextInt();
+
+            switch (n) {
+                case 1:
+                    System.out.println("XUAN");
+                    break;
+                case 2:
+                    System.out.println("HA");
+                    break;
+                case 3:
+                    System.out.println("THU");
+                    break;
+                case 4:
+                    System.out.println("DONG");
+                    break;
+                default:
+                    System.out.println("UNKNOWN");
+        }
+    }
+}
