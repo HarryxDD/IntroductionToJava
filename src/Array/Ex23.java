@@ -6,7 +6,6 @@
 package Array;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 /* Viết chương trình nhập vào mảng một chiều số nguyên n phần tử (n > 0). Dịch trái xoay vòng k lần trong mảng
 
@@ -14,24 +13,29 @@ import java.util.Scanner;
  * @author Ame
  */
 public class Ex23 {
-    static void rotateLeftArray(int[] array, int k) {
+    static int[] rotateLeftArray(int[] array, int k) {
+        int[] tmp = new int[array.length];
+        k = k % array.length;
         
-        for (int i = 0; i < k; i++) {
-            int j, last;
-            last = array[array.length - 1];
-            for (j = array.length - 1; j > array.length - 1; j--) {
-                array[j] = array[j - 1];
+        for (int i = 0; i < array.length; i++) {
+            int j = i - k;
+            if (j < 0) {
+                j = array.length + j;
             }
-            array[j] = last;
+            tmp[j] = array[i];
         }
         
-        System.out.println(Arrays.toString(array));
+        return tmp;
+        
     }
 
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5};
-        int k = 3;
+        int k = 2;
         
-        rotateLeftArray(array, k);
+        
+        int[] newArr = rotateLeftArray(array, k);
+        
+        System.out.println(Arrays.toString(newArr));
     }
 }

@@ -22,7 +22,7 @@ public class Ex8 {
             System.out.println("Input n: ");
             String str = sc.nextLine();
             try {
-
+                
                 n = Integer.parseInt(str);
                 break;
 
